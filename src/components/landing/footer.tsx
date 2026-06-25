@@ -81,7 +81,7 @@ const columns = [
 
 function Footer() {
    return (
-      <footer className="mx-auto mt-28 w-full max-w-310 pb-12 sm:mt-18 sm:px-6">
+      <footer className="mx-auto mt-28 w-full max-w-310 px-3 pb-12 sm:mt-18 sm:px-6">
          <div className="shadow-card bg-surface rounded-[28px] border p-8 sm:p-12">
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-6">
                <div className="col-span-2 max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center">

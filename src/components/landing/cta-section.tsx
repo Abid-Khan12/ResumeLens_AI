@@ -9,7 +9,8 @@ const containerVariants = {
    visible: {
       opacity: 1,
       transition: {
-         staggerChildren: 0.15, // Gap spacing timeline between elements
+         duration: 0.5,
+         staggerChildren: 0.2, // Gap spacing timeline between elements
          delayChildren: 0.1,
       },
    },
@@ -19,16 +20,13 @@ const containerVariants = {
 const itemVariants = {
    hidden: {
       opacity: 0,
-      y: 20,
+      y: 14,
    },
    visible: {
       opacity: 1,
       y: 0,
       transition: {
-         type: "spring",
-         stiffness: 100, // Controls the speed/tightness of the bounce
-         damping: 15, // Controls how quickly the bounce comes to a rest
-         mass: 0.8, // Makes the element feel lighter and snappier
+         duration: 0.4,
       },
    },
 } as const;
@@ -41,7 +39,7 @@ function CTASection() {
                variants={containerVariants}
                initial="hidden"
                whileInView="visible"
-               viewport={{ once: true, amount: 0.4 }}
+               viewport={{ once: true, amount: 0.3 }}
                className="flex flex-col items-center"
             >
                {/* pill */}

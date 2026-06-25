@@ -11,7 +11,7 @@ const containerVariants = {
    visible: {
       opacity: 1,
       transition: {
-         staggerChildren: 0.15, // Gap spacing timeline between elements
+         staggerChildren: 0.05, // Gap spacing timeline between elements
          delayChildren: 0.1,
       },
    },
@@ -24,8 +24,7 @@ const itemVariants = {
       opacity: 1,
       y: 0,
       transition: {
-         duration: 0.65,
-         ease: [0.16, 1, 0.3, 1], // Premium cinematic ease-out
+         duration: 0.5,
       },
    },
 } as const;

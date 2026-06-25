@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+
 import { motion, AnimatePresence } from "motion/react";
 
 import { ArrowRight, MenuIcon, XIcon } from "lucide-react";
@@ -52,10 +53,7 @@ function Navbar() {
          initial={{ y: -40, opacity: 0 }}
          animate={{ y: 0, opacity: 1 }}
          transition={{
-            type: "spring",
-            stiffness: 200, // Controls the speed/tightness of the bounce
-            damping: 20, // Controls how quickly the bounce comes to a rest
-            mass: 0.8, // Makes the element feel lighter and snappier
+            duration: 0.3,
          }}
          className={"fixed inset-x-0 top-3 z-50 mx-3 sm:mx-6"}
       >
@@ -115,16 +113,16 @@ function Navbar() {
                      initial="hidden"
                      animate="visible"
                      exit="hidden"
-                     className="border-border space-y-1.5 overflow-hidden border-t-2 p-3 md:hidden"
+                     className="border-border z-40 space-y-1.5 overflow-hidden border-t-2 p-3 md:hidden"
                   >
                      {navLinks.map((item) => (
-                        <Link
+                        <a
                            key={item.label}
-                           to={item.href}
+                           href={item.href}
                            className="text-forground block py-2 font-medium"
                         >
                            {item.label}
-                        </Link>
+                        </a>
                      ))}
                      <Link
                         to={"/login"}

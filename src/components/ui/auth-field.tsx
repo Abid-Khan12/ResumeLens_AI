@@ -1,8 +1,9 @@
-import { cn } from "@/lib/utils";
-import { EyeIcon, EyeOffIcon, type LucideIcon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
-
 import { Controller, type Control, type FieldValues, type Path } from "react-hook-form";
+
+import { EyeIcon, EyeOffIcon, type LucideIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface InputProps<T extends FieldValues> {
    name: Path<T>;
@@ -53,11 +54,21 @@ export function AuthField<T extends FieldValues>({
                      </div>
                   )}
                </div>
-               {fieldState.invalid && fieldState.error && (
-                  <p className="text-danger absolute -bottom-5 left-0 text-xs font-semibold">
-                     {fieldState.error.message}
-                  </p>
-               )}
+               <AnimatePresence>
+                  {fieldState.invalid && fieldState.error && (
+                     <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                           duration: 0.2,
+                        }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className="text-danger absolute -bottom-5 left-0 text-xs font-semibold"
+                     >
+                        {fieldState.error.message}
+                     </motion.p>
+                  )}
+               </AnimatePresence>
             </div>
          )}
       />
@@ -124,11 +135,21 @@ export function AuthPasswordField<T extends FieldValues>({
                   </button>
                </div>
 
-               {fieldState.invalid && fieldState.error && (
-                  <p className="text-danger absolute -bottom-5 left-0 text-xs font-semibold">
-                     {fieldState.error.message}
-                  </p>
-               )}
+               <AnimatePresence>
+                  {fieldState.invalid && fieldState.error && (
+                     <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                           duration: 0.2,
+                        }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className="text-danger absolute -bottom-5 left-0 text-xs font-semibold"
+                     >
+                        {fieldState.error.message}
+                     </motion.p>
+                  )}
+               </AnimatePresence>
             </div>
          )}
       />

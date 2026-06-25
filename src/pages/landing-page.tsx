@@ -21,7 +21,7 @@ function LandingPage() {
    return (
       <div className="relative h-full w-full overflow-x-hidden">
          <Navbar />
-         <main className="flex flex-col gap-28 sm:gap-36">
+         <main className="flex flex-col gap-16 sm:gap-28">
             <HeroSection />
             <DashboardPreviewSection />
             <FeatureSection />

@@ -102,9 +102,13 @@ function FeatureSection() {
             subTitle="Eight surgical tools built around one workflow: upload, analyze, rewrite, ship."
          />
 
-         <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {features.map(({ icon: Icon, ...item }) => (
-               <div
+         <motion.div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {features.map(({ icon: Icon, ...item }, i) => (
+               <motion.div
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
                   key={item.title}
                   className={cn(
                      "group shadow-card hover:shadow-card-hover rounded-card relative w-full space-y-5 overflow-hidden border bg-linear-to-b from-[#FFFFFF] from-0% to-[#FBFBF7] to-100% p-5 transition-shadow duration-300 sm:p-6 dark:bg-none",
@@ -151,9 +155,9 @@ function FeatureSection() {
                      </div>
                   </div>
                   {item.preview}
-               </div>
+               </motion.div>
             ))}
-         </div>
+         </motion.div>
       </section>
    );
 }

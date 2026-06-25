@@ -36,34 +36,6 @@ const steps = [
    },
 ];
 
-const containerVariant = {
-   hidden: { opacity: 0 },
-   visible: {
-      opacity: 1,
-      transition: {
-         staggerChildren: 0.15,
-         delayChildren: 0.1,
-      },
-   },
-} as const;
-
-const itemVariants = {
-   hidden: {
-      opacity: 0,
-      y: 30,
-   },
-   visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-         type: "spring",
-         stiffness: 100, // Controls the speed/tightness of the bounce
-         damping: 15, // Controls how quickly the bounce comes to a rest
-         mass: 0.8, // Makes the element feel lighter and snappier
-      },
-   },
-} as const;
-
 function HowItWorkSection() {
    return (
       <section
@@ -80,21 +52,18 @@ function HowItWorkSection() {
             subTitle="No prompt engineering. No ten-step funnels. Drop, analyze, ship."
          />
 
-         <motion.div
-            variants={containerVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="relative mt-16 grid grid-cols-1 gap-5 lg:grid-cols-3"
-         >
+         <div className="relative mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
             {steps.map((step, i) => {
                const Icon = step.icon;
                const Visual = step.Visual;
 
                return (
                   <motion.div
-                     variants={itemVariants}
-                     key={step.n}
+                     key={step.title}
+                     initial={{ opacity: 0, y: 14 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true, amount: 0.4 }}
+                     transition={{ duration: 0.5, delay: i * 0.05 }}
                      className="shadow-card hover:shadow-card-hover rounded-card bg-surface relative border p-5 transition-shadow duration-300 sm:p-7"
                   >
                      <div
@@ -146,11 +115,7 @@ function HowItWorkSection() {
                      </div>
 
                      {i < steps.length - 1 && (
-                        <motion.div
-                           initial={{ opacity: 0, scale: 0 }}
-                           whileInView={{ opacity: 1, scale: 1 }}
-                           viewport={{ once: true, amount: 0.5 }}
-                           transition={{ duration: 0.3, delay: 0.2 + i * 0.2 }}
+                        <div
                            className="shadow-card from-accent to-accent-strong dark:bg-forground/95 dark:text-background absolute z-10 flex size-8 items-center justify-center rounded-full bg-linear-to-br text-white max-lg:-bottom-4 max-lg:left-1/2 max-lg:-translate-x-1/2 lg:top-28 lg:-right-3.5 dark:bg-none"
                            aria-hidden
                         >
@@ -164,12 +129,12 @@ function HowItWorkSection() {
                               strokeWidth={2.5}
                               className="lg:hidden"
                            />
-                        </motion.div>
+                        </div>
                      )}
                   </motion.div>
                );
             })}
-         </motion.div>
+         </div>
       </section>
    );
 }

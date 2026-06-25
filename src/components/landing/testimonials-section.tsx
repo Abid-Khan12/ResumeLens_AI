@@ -49,34 +49,6 @@ const testimonials = [
    },
 ];
 
-const containerVariant = {
-   hidden: { opacity: 0 },
-   visible: {
-      opacity: 1,
-      transition: {
-         staggerChildren: 0.15,
-         delayChildren: 0.1,
-      },
-   },
-} as const;
-
-const itemVariants = {
-   hidden: {
-      opacity: 0,
-      y: 30,
-   },
-   visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-         type: "spring",
-         stiffness: 100, // Controls the speed/tightness of the bounce
-         damping: 15, // Controls how quickly the bounce comes to a rest
-         mass: 0.8, // Makes the element feel lighter and snappier
-      },
-   },
-} as const;
-
 function TestimonialSection() {
    return (
       <section className="mx-auto w-full max-w-310 px-3 sm:px-6">
@@ -86,16 +58,13 @@ function TestimonialSection() {
             subTitle="From new grads sweating their first SWE role to senior ICs switching domains."
          />
 
-         <motion.div
-            variants={containerVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3"
-         >
-            {testimonials.map((item) => (
+         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+            {testimonials.map((item, i) => (
                <motion.div
-                  variants={itemVariants}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
                   key={item.name}
                   className="rounded-card bg-surface shadow-card hover:shadow-card-hover border p-5 transition-shadow duration-300 sm:p-6"
                >
@@ -127,7 +96,7 @@ function TestimonialSection() {
                   </div>
                </motion.div>
             ))}
-         </motion.div>
+         </div>
       </section>
    );
 }
