@@ -114,7 +114,7 @@ function TestimonialSection() {
                   </p>
                   <div className="mt-5 border-t pt-4">
                      <div className="flex items-center gap-2.5">
-                        <div className="font-display bg-accent-strong text-background flex size-10 items-center justify-center rounded-full text-sm tracking-tight uppercase">
+                        <div className="font-display bg-accent-soft text-accent-strong flex size-10 items-center justify-center rounded-full text-sm tracking-tight uppercase">
                            {item.initials}
                         </div>
                         <div className="flex flex-col gap-1">

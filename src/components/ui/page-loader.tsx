@@ -40,7 +40,7 @@ export default function PageLoader() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="text-forground font-sans text-[7rem] leading-none font-black tracking-tighter tabular-nums sm:text-[9rem]"
+                  className="text-forground font-display text-[7rem] leading-none font-black tracking-tighter italic tabular-nums sm:text-[9rem]"
                >
                   {Math.floor(progress)}
                </motion.h1>

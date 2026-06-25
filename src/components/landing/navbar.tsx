@@ -61,7 +61,7 @@ function Navbar() {
       >
          <nav
             className={cn(
-               "bg-surface/95 mx-auto w-full max-w-310 rounded-xl border border-transparent backdrop-blur-md transition-all duration-300 md:rounded-full",
+               "bg-surface mx-auto w-full max-w-310 rounded-xl border border-transparent backdrop-blur-md transition-all duration-300 md:rounded-full",
                { "border-border shadow-card bg-surface/85 backdrop-blur-xl": isScrolled },
             )}
          >
@@ -80,7 +80,7 @@ function Navbar() {
                      <a
                         key={item.label}
                         href={item.href}
-                        className="text-forground-muted hover:text-forground hover:bg-surface-2 rounded-full px-2.5 py-1.5 text-sm transition-colors md:text-xs lg:px-3.5 lg:text-sm"
+                        className="text-forground-muted hover:text-forground hover:bg-surface-2 rounded-full px-2.5 py-1.5 text-sm transition-colors duration-200 md:text-xs lg:px-3.5 lg:text-sm"
                      >
                         {item.label}
                      </a>

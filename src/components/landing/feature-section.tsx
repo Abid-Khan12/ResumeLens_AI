@@ -107,12 +107,9 @@ function FeatureSection() {
                <div
                   key={item.title}
                   className={cn(
-                     "group shadow-card hover:shadow-card-hover rounded-card relative w-full space-y-5 overflow-hidden border p-5 transition-shadow duration-300 sm:p-6",
+                     "group shadow-card hover:shadow-card-hover rounded-card relative w-full space-y-5 overflow-hidden border bg-linear-to-b from-[#FFFFFF] from-0% to-[#FBFBF7] to-100% p-5 transition-shadow duration-300 sm:p-6 dark:bg-none",
                      item.span,
                   )}
-                  style={{
-                     background: "linear-gradient(180deg, #FFFFFF 0%, #FBFBF7 100%)",
-                  }}
                >
                   {/* Inset light */}
                   <div
@@ -138,14 +135,7 @@ function FeatureSection() {
                   {/* Corner hover effect */}
 
                   <div className="flex items-start gap-3">
-                     <div
-                        className="flex size-10 shrink-0 items-center justify-center rounded-2xl transition-transform duration-200 group-hover:scale-105"
-                        style={{
-                           background: "linear-gradient(135deg, #EEF5EF 0%, #D9E7DD 100%)",
-                           boxShadow:
-                              "inset 0 1px 0 0 rgba(255,255,255,0.7), 0 1px 2px rgba(47,74,58,0.06)",
-                        }}
-                     >
+                     <div className="dark:bg-accent-soft dark:text-accent-strong flex size-10 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-[#EEF5EF] to-[#D9E7DD] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),0_1px_2px_rgba(47,74,58,0.06)] transition-transform duration-200 group-hover:scale-105 dark:bg-none dark:shadow-none">
                         <Icon
                            size={17}
                            strokeWidth={2.5}

@@ -100,9 +100,9 @@ function Footer() {
                   </p>
                   <div className="mt-5 flex items-center gap-2">
                      {[
-                        { icon: GithubIcon, href: "#github" },
-                        { icon: TwitterIcon, href: "#twitter" },
-                        { icon: LinkedinIcon, href: "#" },
+                        { icon: GithubIcon, href: "https://github.com/Abid-Khan12" },
+                        { icon: TwitterIcon, href: "https://x.com/Abid_Dev_X" },
+                        { icon: LinkedinIcon, href: "https://www.linkedin.com/in/abid-shah-khan" },
                      ].map(({ icon: Icon, href }) => (
                         <a
                            key={href}

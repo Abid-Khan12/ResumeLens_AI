@@ -97,7 +97,7 @@ function Pricing() {
                   className={billing === "yearly" ? "is-active" : ""}
                >
                   Yearly
-                  <span className="save-pill">Save 20%</span>
+                  <span className="save-pill bg-accent-soft text-forground-muted">Save 20%</span>
                </button>
             </div>
          </div>

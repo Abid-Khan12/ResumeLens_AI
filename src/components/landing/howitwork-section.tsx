@@ -126,13 +126,7 @@ function HowItWorkSection() {
                         </span>
                         <div className="relative overflow-hidden rounded-2xl">
                            <div className="bg-accent-soft absolute -inset-2 rounded-3xl opacity-70 blur-lg" />
-                           <div
-                              className="shadow-card relative flex size-12 items-center justify-center rounded-2xl text-white"
-                              style={{
-                                 background:
-                                    "linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%)",
-                              }}
-                           >
+                           <div className="shadow-card from-accent to-accent-strong dark:bg-accent-soft dark:text-accent-strong relative flex size-12 items-center justify-center rounded-2xl bg-linear-to-br text-white dark:bg-none">
                               <Icon
                                  size={22}
                                  strokeWidth={2}
@@ -157,11 +151,7 @@ function HowItWorkSection() {
                            whileInView={{ opacity: 1, scale: 1 }}
                            viewport={{ once: true, amount: 0.5 }}
                            transition={{ duration: 0.3, delay: 0.2 + i * 0.2 }}
-                           className="shadow-card absolute z-10 flex size-8 items-center justify-center rounded-full text-white max-lg:-bottom-4 max-lg:left-1/2 max-lg:-translate-x-1/2 lg:top-28 lg:-right-3.5"
-                           style={{
-                              background:
-                                 "linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%)",
-                           }}
+                           className="shadow-card from-accent to-accent-strong dark:bg-forground/95 dark:text-background absolute z-10 flex size-8 items-center justify-center rounded-full bg-linear-to-br text-white max-lg:-bottom-4 max-lg:left-1/2 max-lg:-translate-x-1/2 lg:top-28 lg:-right-3.5 dark:bg-none"
                            aria-hidden
                         >
                            <ArrowRightIcon
