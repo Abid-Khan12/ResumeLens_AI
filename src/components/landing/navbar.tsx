@@ -10,16 +10,16 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
    {
+      label: "Dashboard",
+      href: "#dashboard-preview",
+   },
+   {
       label: "Features",
       href: "#features",
    },
    {
       label: "How it works",
       href: "#how_it_works",
-   },
-   {
-      label: "Dashboard",
-      href: "#dashboard-preview",
    },
    {
       label: "Pricing",
