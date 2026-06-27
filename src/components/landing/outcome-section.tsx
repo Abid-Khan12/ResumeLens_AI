@@ -51,7 +51,7 @@ function OutComeSection() {
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.5, delay: i * 0.05 }}
                   className={cn(
-                     `shadow-card hover:shadow-card-hover bg-surface rounded-card border p-5 transition-shadow duration-300 sm:p-6`,
+                     `shadow-card hover:shadow-card-hover bg-surface rounded-card border p-5 transition-[translate,box-shadow] duration-300 hover:-translate-y-1 sm:p-6`,
                      i === 0 ? "lg:col-span-3" : i === 1 ? "lg:col-span-3" : "lg:col-span-2",
                   )}
                >

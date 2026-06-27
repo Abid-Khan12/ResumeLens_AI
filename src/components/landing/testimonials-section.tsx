@@ -66,7 +66,7 @@ function TestimonialSection() {
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.5, delay: i * 0.05 }}
                   key={item.name}
-                  className="rounded-card bg-surface shadow-card hover:shadow-card-hover border p-5 transition-shadow duration-300 sm:p-6"
+                  className="rounded-card bg-surface shadow-card hover:shadow-card-hover transition-[translate,box-shadow border p-5 duration-300 hover:-translate-y-1 sm:p-6"
                >
                   <div className="text-accent mb-3 flex gap-0.5">
                      {Array.from({ length: 5 }).map((_, k) => (

@@ -7,7 +7,7 @@ import router from "@/routes";
 function App() {
    return (
       <ThemeProvider
-         defaultTheme="system"
+         defaultTheme="light"
          storageKey="vite-ui-theme"
       >
          <RouterProvider router={router} />

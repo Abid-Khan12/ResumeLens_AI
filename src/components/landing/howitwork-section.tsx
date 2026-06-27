@@ -63,8 +63,8 @@ function HowItWorkSection() {
                      initial={{ opacity: 0, y: 14 }}
                      whileInView={{ opacity: 1, y: 0 }}
                      viewport={{ once: true, amount: 0.4 }}
-                     transition={{ duration: 0.5, delay: i * 0.05 }}
-                     className="shadow-card hover:shadow-card-hover rounded-card bg-surface relative border p-5 transition-shadow duration-300 sm:p-7"
+                     transition={{ duration: 0.5, delay: i * 0.1 }}
+                     className="shadow-card hover:shadow-card-hover rounded-card bg-surface transition-[translate,box-shadow relative border p-5 duration-300 hover:-translate-y-1 sm:p-7"
                   >
                      <div
                         className="absolute inset-x-7 top-0 h-px"
