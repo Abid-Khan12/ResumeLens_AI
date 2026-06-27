@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { useNavigate } from "react-router";
 import { motion } from "motion/react";
-import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid } from "recharts";
+import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis } from "recharts";
 import {
    ArrowRight,
    ArrowUpRight,
