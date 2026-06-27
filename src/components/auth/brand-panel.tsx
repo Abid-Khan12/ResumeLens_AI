@@ -17,7 +17,7 @@ function BrandPanel({ headline, subhead }: { headline: ReactNode; subhead: strin
             }}
          />
          {/* glow */}
-         <motion.div
+         {/* <motion.div
             className="pointer-events-none absolute top-0 bottom-0 w-[60%] opacity-40 mix-blend-screen select-none"
             style={{
                // Sharp emerald-mint core leaking out to transparent edges
@@ -35,7 +35,7 @@ function BrandPanel({ headline, subhead }: { headline: ReactNode; subhead: strin
                repeatDelay: 1, // The rest/delay time in seconds before running the loop again
                ease: [0.25, 1, 0.5, 1], // Custom quad ease-out variant for variable momentum
             }}
-         />
+         /> */}
 
          {/* Content */}
          <div className="relative z-10 flex h-160 flex-col gap-10 pt-10 xl:h-180 xl:justify-between xl:pt-16">

@@ -1,24 +1,18 @@
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
+// import { motion } from "motion/react";
 import type React from "react";
 
 export function DarkPanel({
    className = "",
    children,
-   glow = true,
+   //  glow = true,
 }: {
    children: React.ReactNode;
    className?: string;
    glow?: boolean;
 }) {
    return (
-      <div
-         className={cn(
-            "relative overflow-hidden",
-            "shadow-xl shadow-black/40 backdrop-blur-md",
-            className,
-         )}
-      >
+      <div className={cn("relative overflow-hidden", "shadow-card backdrop-blur-md", className)}>
          <div
             className="absolute inset-0"
             style={{
@@ -27,7 +21,7 @@ export function DarkPanel({
             }}
          />
          {/* Sweeping Accent Glow Layer */}
-         {glow && (
+         {/* {glow && (
             <motion.div
                className="pointer-events-none absolute top-0 bottom-0 w-[60%] opacity-40 mix-blend-screen select-none"
                style={{
@@ -47,7 +41,7 @@ export function DarkPanel({
                   ease: [0.25, 1, 0.5, 1], // Custom quad ease-out variant for variable momentum
                }}
             />
-         )}
+         )} */}
 
          {/* Content Wrapper */}
          <div className="relative z-10 h-full w-full">{children}</div>

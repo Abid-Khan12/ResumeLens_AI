@@ -59,7 +59,7 @@ function Sidebar() {
    return (
       <aside
          className={cn(
-            "group rounded-card bg-surface shadow-card hover:shadow-card-hover sticky top-0 hidden flex-col justify-between overflow-hidden py-5 hover:w-60 lg:flex",
+            "group rounded-card bg-surface shadow-card hover:shadow-card-hover sticky top-4 hidden flex-col justify-between overflow-hidden py-5 hover:w-60 lg:flex",
             "h-[calc(100vh-32px)] w-22",
             "transition-[width,box-shadow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
          )}
@@ -107,7 +107,7 @@ function Sidebar() {
             />
             <button
                className={cn(
-                  "text-forground-muted flex size-11 cursor-pointer items-center overflow-hidden rounded-2xl group-hover:w-53 hover:bg-red-600/60 hover:text-white",
+                  "text-forground-muted hover:bg-danger flex size-11 cursor-pointer items-center overflow-hidden rounded-2xl group-hover:w-53 hover:text-white dark:hover:bg-red-500/50",
                   "transition-[width,background-color,color,box-shadow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
                )}
             >
