@@ -1,8 +1,12 @@
+import type { Activity } from "@/pages/dashboard-page";
+import type { Tone } from "@/components/dashboard/ats-gauge-card";
+
+import { Upload, Sparkles, PenLine, CheckCircle2, FileDown, type LucideIcon } from "lucide-react";
+
+import { relativeTime } from "@/lib/utils";
+
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Upload, Sparkles, PenLine, CheckCircle2, FileDown, type LucideIcon } from "lucide-react";
-import type { Activity } from "@/pages/dashboard-page";
-import type { Tone } from "./ats-gauge-card";
 
 const ICONS: {
    upload: LucideIcon;
@@ -25,16 +29,6 @@ const TONES: { upload: Tone; analyze: Tone; rewrite: Tone; complete: Tone; expor
    complete: "success",
    export: "neutral",
 };
-
-export function relativeTime(date: Date) {
-   const d = typeof date === "string" ? new Date(date) : date;
-   const diff = (Date.now() - d.getTime()) / 1000;
-   if (diff < 60) return "just now";
-   if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
-   if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
-   if (diff < 604800) return `${Math.floor(diff / 86400)}d ago`;
-   return d.toLocaleDateString();
-}
 
 export default function ActivityFeed({ items }: { items: Activity }) {
    return (

@@ -4,19 +4,8 @@ import ProfileCard from "@/components/dashboard/profile-card";
 import ScoreEvolutionChart from "@/components/dashboard/score-evolution-chart";
 import StatCard from "@/components/dashboard/stat-card";
 import VersionStack from "@/components/dashboard/version-stack-card";
+import { daysAgo, minutesAgo } from "@/lib/utils";
 import { GaugeIcon, KeyRoundIcon, LayersIcon, LightbulbIcon } from "lucide-react";
-
-function daysAgo(days: number): Date {
-   const date = new Date();
-   date.setDate(date.getDate() - days);
-   return date;
-}
-
-function minutesAgo(minutes: number): Date {
-   const date = new Date();
-   date.setMinutes(date.getMinutes() - minutes);
-   return date;
-}
 
 const statCardData = {
    atsScore: {
