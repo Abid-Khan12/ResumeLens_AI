@@ -72,9 +72,9 @@
    --forground: #f2f2ee;
    --forground-muted: #9aa0a6;
 
-   --accent: #8fb39c;
-   --accent-strong: #b6cfc0;
-   --accent-soft: #8fb39c1f;
+   --accent: #5b7c6a;
+   --accent-strong: #2f4a3a;
+   --accent-soft: #e6efe8;
 
    --accent-hero: #1e3024;
    --accent-hero-2: #2a4234;
@@ -283,5 +283,46 @@
          opacity: 1;
          transform: translateY(0);
       }
+   }
+}
+
+@keyframes progress {
+   0% {
+      width: 0%;
+   }
+   15% {
+      width: 35%;
+   }
+   40% {
+      width: 58%;
+   }
+   65% {
+      width: 76%;
+   }
+   85% {
+      width: 88%;
+   }
+   100% {
+      width: 100%;
+   }
+}
+
+.skeleton {
+   background: linear-gradient(
+      90deg,
+      var(--surface-2) 25%,
+      var(--surface) 50%,
+      var(--surface-2) 75%
+   );
+   background-size: 600px 100%;
+   animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+   from {
+      background-position: -600px 0;
+   }
+   to {
+      background-position: 600px 0;
    }
 }

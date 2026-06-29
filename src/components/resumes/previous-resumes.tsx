@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 
-function makeVersion({
+export function makeVersion({
    id,
    label,
    score,
@@ -96,7 +96,7 @@ function makeVersion({
    };
 }
 
-let mockResumes = [
+export const mockResumes = [
    {
       _id: "resume_1",
       title: "Senior Frontend Engineer — Stripe",

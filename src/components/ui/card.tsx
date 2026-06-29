@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const cardVariants = cva("bg-surface border shadow-card transition-all duration-300", {
+const cardVariants = cva("bg-surface border shadow-card transition-shadow duration-300", {
    variants: {
       variant: {
          default: "hover:shadow-card-hover",
@@ -64,7 +64,7 @@ export function CardDescription({ className, ...props }: React.ComponentProps<"d
    return (
       <div
          data-slot="card-description"
-         className={cn("text-forground-muted text-sm leading-relaxed", className)}
+         className={cn("text-forground-muted text-xs leading-relaxed", className)}
          {...props}
       />
    );

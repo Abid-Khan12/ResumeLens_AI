@@ -58,7 +58,10 @@ export default function AtsGauge({ score = 0, delta = 0 }) {
    const DeltaIcon = delta > 0 ? TrendingUp : delta < 0 ? TrendingDown : Minus;
 
    return (
-      <Card className="flex h-full flex-col">
+      <Card
+         className="flex h-full flex-col"
+         variant={"flat"}
+      >
          <CardHeader>
             <div>
                <CardTitle className="lg:text-sm xl:text-base">ATS Readiness</CardTitle>

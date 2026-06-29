@@ -43,7 +43,10 @@ export default function ScoreEvolutionChart({
    delta,
 }: ScoreEvolutionChartProps) {
    return (
-      <Card className="h-full">
+      <Card
+         className="h-full"
+         variant={"flat"}
+      >
          <CardHeader>
             <div>
                <CardTitle className="text-base">Score Evolution</CardTitle>

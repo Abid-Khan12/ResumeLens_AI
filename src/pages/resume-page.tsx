@@ -3,7 +3,7 @@ import UploadResume from "@/components/resumes/upload-resume";
 
 function ResumePages() {
    return (
-      <section className="flex flex-1 flex-col gap-5">
+      <section className="flex-1 space-y-5">
          <div>
             <h2 className="font-display text-2xl font-semibold tracking-tight">Your Resumes</h2>
             <p className="text-forground-muted text-sm leading-relaxed">

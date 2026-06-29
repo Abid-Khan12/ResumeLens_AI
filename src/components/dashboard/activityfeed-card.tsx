@@ -32,7 +32,10 @@ const TONES: { upload: Tone; analyze: Tone; rewrite: Tone; complete: Tone; expor
 
 export default function ActivityFeed({ items }: { items: Activity }) {
    return (
-      <Card className="flex h-full flex-col">
+      <Card
+         className="flex h-full flex-col"
+         variant={"flat"}
+      >
          <CardHeader>
             <div>
                <CardTitle className="text-base">Activity</CardTitle>

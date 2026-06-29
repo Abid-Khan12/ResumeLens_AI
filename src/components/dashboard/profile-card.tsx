@@ -17,7 +17,10 @@ export default function ProfileCard({ user, stats }: { user: User; stats: Profil
    const since = memberSince(user.createdAt);
 
    return (
-      <Card className="flex h-full flex-col items-center text-center">
+      <Card
+         className="flex h-full flex-col items-center text-center"
+         variant={"flat"}
+      >
          <div className="relative">
             <Avatar
                name={user.name}

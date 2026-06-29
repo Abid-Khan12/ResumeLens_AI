@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { NavLink } from "react-router";
 
 import AILogo from "@/components/ui/ai-logo";
@@ -28,29 +29,42 @@ function SidebarItem({ icon: Icon, label, to }: { to: string; icon: LucideIcon; 
          to={to}
          className={({ isActive }) =>
             cn(
-               "flex size-11 items-center overflow-hidden rounded-2xl group-hover:w-53",
-               "transition-[width,background-color,color,box-shadow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+               "relative flex size-11 items-center rounded-2xl group-hover:w-53",
+               "transition-[width,color,box-shadow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
                isActive
-                  ? "bg-forground text-background shadow-card hover:shadow-card-hover"
+                  ? "text-background"
                   : "hover:bg-surface-2 hover:text-forground bg-surface text-forground-muted",
             )
          }
       >
-         <div className=""></div>
-         <span className="flex size-11 shrink-0 items-center justify-center">
-            <Icon
-               size={18}
-               strokeWidth={2}
-            />
-         </span>
-         <span
-            className={cn(
-               "-translate-x-2 text-sm font-semibold opacity-0",
-               "transition-[translate,opacity] duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100 group-hover:delay-150",
-            )}
-         >
-            {label}
-         </span>
+         {({ isActive }) => (
+            <>
+               {/* pill lives here but is inert to siblings — no z stacking conflict */}
+               {isActive && (
+                  <motion.span
+                     layoutId="active-link"
+                     className="bg-forground text-background absolute inset-0 z-10 rounded-2xl"
+                     transition={{ type: "spring", duration: 0.3, bounce: 0.3 }}
+                  />
+               )}
+
+               {/* content always above the pill */}
+               <span className="relative z-10 flex size-11 shrink-0 items-center justify-center">
+                  <Icon
+                     size={18}
+                     strokeWidth={2}
+                  />
+               </span>
+               <span
+                  className={cn(
+                     "relative z-10 -translate-x-2 text-sm font-semibold opacity-0",
+                     "transition-[translate,opacity] duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100 group-hover:delay-150",
+                  )}
+               >
+                  {label}
+               </span>
+            </>
+         )}
       </NavLink>
    );
 }
@@ -59,7 +73,7 @@ function Sidebar() {
    return (
       <aside
          className={cn(
-            "group rounded-card bg-surface shadow-card hover:shadow-card-hover sticky top-4 hidden flex-col justify-between overflow-hidden py-5 hover:w-60 lg:flex",
+            "group rounded-card bg-surface shadow-card hover:shadow-card-hover fixed top-4 left-4 z-50 hidden flex-col justify-between py-5 hover:w-60 lg:flex",
             "h-[calc(100vh-32px)] w-22",
             "transition-[width,box-shadow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
          )}

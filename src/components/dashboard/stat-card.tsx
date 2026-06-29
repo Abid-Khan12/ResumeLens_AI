@@ -85,7 +85,7 @@ function StatCard({
 
    return (
       <Card
-         variant={accent ? "accent" : "default"}
+         variant={accent ? "accent" : "flat"}
          className={cn("max-sm: relative overflow-hidden max-sm:p-4")}
       >
          <div className="flex h-full items-start justify-between gap-2">

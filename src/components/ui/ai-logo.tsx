@@ -10,7 +10,7 @@ const AILogo = ({ className }: { className?: string }) => {
          {/* Ambient AI Glow */}
          <motion.div
             className="absolute -inset-2 rounded-full bg-[radial-gradient(circle,var(--accent)_0%,transparent_70%)] blur-md"
-            animate={{ opacity: [0.25, 0.55, 0.25], scale: [0.95, 1.08, 0.95] }}
+            animate={{ opacity: [0.25, 0.55, 0.25], scale: [0.95, 1.08, 1.01] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
          />
 
@@ -42,8 +42,8 @@ const AILogo = ({ className }: { className?: string }) => {
 
             {/* Radar Sweep */}
             <motion.div
-               className="absolute inset-0 rounded-full bg-[radial-gradient(circle,var(--accent-soft)_0%,transparent_75%)]"
-               animate={{ scale: [0.8, 1.2, 0.8] }}
+               className="absolute inset-0 rounded-full bg-[radial-gradient(circle,var(--accent)_0%,transparent_75%)]"
+               animate={{ scale: [1, 1.2, 1] }}
                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
 
@@ -64,21 +64,6 @@ const AILogo = ({ className }: { className?: string }) => {
                   transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                />
             </div>
-
-            {/* Data Extraction Nodes */}
-            <motion.div
-               className="bg-accent-strong absolute top-3 right-2 h-1 w-1 rounded-full"
-               animate={{ opacity: [0.3, 1, 0.3] }}
-               transition={{ duration: 1.5, repeat: Infinity }}
-            />
-            <div className="absolute top-3 right-2 h-px w-2 bg-[#A8C4B3]/50" />
-
-            <motion.div
-               className="bg-forground absolute bottom-4 left-2 h-1 w-1 rounded-full"
-               animate={{ opacity: [1, 0.2, 1] }}
-               transition={{ duration: 1.8, repeat: Infinity, delay: 0.5 }}
-            />
-            <div className="absolute bottom-4 left-2 h-px w-2 bg-white/30" />
 
             {/* AI Intelligence Core */}
             <motion.div

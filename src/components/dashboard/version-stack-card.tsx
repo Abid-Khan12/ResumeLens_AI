@@ -241,7 +241,10 @@ export default function VersionStack({
    const TotalDeltaIcon = deltaIcon(totalDelta);
 
    return (
-      <Card className="flex h-full flex-col truncate">
+      <Card
+         className="flex h-full flex-col truncate"
+         variant={"flat"}
+      >
          <CardHeader>
             <div>
                <CardTitle className="text-base">Resume Versions</CardTitle>
