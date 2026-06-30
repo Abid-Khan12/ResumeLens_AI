@@ -19,120 +19,15 @@ import {
 
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { daysAgo, hoursAgo } from "@/lib/utils";
-
-// ─── types ────────────────────────────────────────────────────────────────────
-
-type Severity = "low" | "medium" | "high";
-
-interface TrendPoint {
-   score: number;
-   at: Date;
-   resumeTitle: string;
-}
-
-interface TopIssue {
-   title: string;
-   severity: Severity;
-   count: number;
-}
-
-interface KeywordCount {
-   keyword: string;
-   count: number;
-}
-
-interface ResumePerformance {
-   resumeId: string;
-   title: string;
-   latestScore: number;
-   bestScore: number;
-   improvement: number;
-   analysesCount: number;
-}
-
-interface InsightsData {
-   averageScore: number;
-   bestScore: { value: number; resumeId: string; resumeTitle: string };
-   totalAnalyses: number;
-   scoreTrend: TrendPoint[];
-   topIssues: TopIssue[];
-   topMissingKeywords: KeywordCount[];
-   topPresentKeywords: KeywordCount[];
-   resumePerformance: ResumePerformance[];
-}
-
-// ─── constants ────────────────────────────────────────────────────────────────
+import { mockInsights } from "@/mock/insight";
 
 const SEV_TONE = { low: "neutral", medium: "warning", high: "danger" } as const;
-
-export const mockInsights: InsightsData = {
-   averageScore: 73,
-   bestScore: { value: 86, resumeId: "resume_1", resumeTitle: "Senior Frontend Engineer — Stripe" },
-   totalAnalyses: 12,
-   scoreTrend: [
-      { score: 58, at: daysAgo(34), resumeTitle: "Vercel" },
-      { score: 62, at: daysAgo(20), resumeTitle: "Stripe" },
-      { score: 71, at: daysAgo(60), resumeTitle: "Notion" },
-      { score: 74, at: daysAgo(3), resumeTitle: "Vercel" },
-      { score: 78, at: daysAgo(8), resumeTitle: "Stripe" },
-      { score: 82, at: daysAgo(2), resumeTitle: "Stripe" },
-      { score: 86, at: hoursAgo(2), resumeTitle: "Stripe" },
-   ],
-   topIssues: [
-      { title: "Weak action verbs", severity: "high", count: 8 },
-      { title: "Missing keywords for target role", severity: "high", count: 6 },
-      { title: "Inconsistent date formatting", severity: "medium", count: 5 },
-      { title: "Bullets too long", severity: "low", count: 4 },
-      { title: "No quantified outcomes", severity: "high", count: 3 },
-   ],
-   topMissingKeywords: [
-      { keyword: "GraphQL", count: 7 },
-      { keyword: "Docker", count: 6 },
-      { keyword: "Kubernetes", count: 4 },
-      { keyword: "Redis", count: 3 },
-      { keyword: "PostgreSQL", count: 2 },
-   ],
-   topPresentKeywords: [
-      { keyword: "React", count: 12 },
-      { keyword: "TypeScript", count: 11 },
-      { keyword: "Node.js", count: 9 },
-      { keyword: "AWS", count: 7 },
-      { keyword: "Vite", count: 5 },
-   ],
-   resumePerformance: [
-      {
-         resumeId: "resume_1",
-         title: "Senior Frontend — Stripe",
-         latestScore: 86,
-         bestScore: 86,
-         improvement: 24,
-         analysesCount: 5,
-      },
-      {
-         resumeId: "resume_2",
-         title: "Full-Stack — Vercel",
-         latestScore: 74,
-         bestScore: 74,
-         improvement: 16,
-         analysesCount: 4,
-      },
-      {
-         resumeId: "resume_3",
-         title: "React — Notion",
-         latestScore: 71,
-         bestScore: 71,
-         improvement: 0,
-         analysesCount: 3,
-      },
-   ],
-};
 
 // ─── component ────────────────────────────────────────────────────────────────
 
 export default function Insights() {
    const navigate = useNavigate();
-   const data = mockInsights; // ← swap for query/loader result later
+   const data = mockInsights;
 
    const trend = data.scoreTrend.map((p, i) => ({
       label: `#${i + 1}`,
@@ -142,7 +37,13 @@ export default function Insights() {
    }));
 
    return (
-      <div className="space-y-6">
+      <section className="flex-1 space-y-5">
+         <div>
+            <h2 className="font-display text-2xl font-semibold tracking-tight">Insights</h2>
+            <p className="text-forground-muted text-sm leading-relaxed">
+               Patterns across all your resumes and analyses.
+            </p>
+         </div>
          {/* KPI row */}
          <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
             <Kpi
@@ -312,7 +213,7 @@ export default function Insights() {
                      {data.topMissingKeywords.map((k, i) => (
                         <span
                            key={i}
-                           className="text-danger inline-flex items-center gap-1.5 rounded-full bg-[#F8E3E0] px-2.5 py-1 text-xs font-medium"
+                           className="dark:bg-danger/60 bg-danger inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium text-white"
                         >
                            {k.keyword}
                            <span className="tabular text-[10px] opacity-70">×{k.count}</span>
@@ -338,7 +239,7 @@ export default function Insights() {
                   {data.topPresentKeywords.map((k, i) => (
                      <span
                         key={i}
-                        className="bg-accent-soft text-accent-strong inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium"
+                        className="bg-accent-soft text-accent-strong dark:text-forground dark:bg-accent-strong inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium"
                      >
                         {k.keyword}
                         <span className="tabular text-[10px] opacity-70">×{k.count}</span>
@@ -402,7 +303,7 @@ export default function Insights() {
                </table>
             </div>
          </Card>
-      </div>
+      </section>
    );
 }
 
@@ -428,7 +329,9 @@ function Kpi({ label, value, suffix, sub, icon: Icon, accent = false }: KpiProps
                <div className="flex items-center gap-2">
                   <div
                      className={`flex h-7 w-7 items-center justify-center rounded-full ${
-                        accent ? "bg-white/15 text-white" : "bg-accent-soft text-accent-strong"
+                        accent
+                           ? "bg-white/15 text-white"
+                           : "bg-accent-soft text-accent-strong dark:text-forground dark:bg-accent-strong"
                      }`}
                   >
                      <Icon size={14} />

@@ -111,7 +111,7 @@ function DragZone({ onChange, isInvalid }: ZoneProps) {
             {/* icon container */}
             <div
                className={cn(
-                  "bg-accent-soft text-accent-strong flex size-14 translate-y-0 items-center justify-center rounded-2xl transition-[translate,background-color,color]",
+                  "bg-accent-soft text-accent-strong dark:text-forground dark:bg-accent-strong flex size-14 translate-y-0 items-center justify-center rounded-2xl transition-[translate,background-color,color]",
                   isDragging && "bg-accent -translate-y-2 text-white",
                   isInvalid && "bg-danger/70 text-white",
                )}
@@ -159,7 +159,7 @@ function FileCard({ file, onRemove, isPending }: FileCardProps) {
             transition={{ type: "tween", ease: [0.87, 0, 0.13, 1], duration: 0.35 }}
             className="flex items-center gap-2.5"
          >
-            <div className="bg-accent-soft text-accent-strong flex size-10 shrink-0 items-center justify-center rounded-2xl">
+            <div className="bg-accent-soft text-accent-strong dark:text-forground dark:bg-accent-strong flex size-10 shrink-0 items-center justify-center rounded-2xl">
                <FileText size={16} />
             </div>
 

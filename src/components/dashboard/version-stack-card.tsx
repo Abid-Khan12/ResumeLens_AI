@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useMemo } from "react";
 import { useNavigate } from "react-router";
 import { motion } from "motion/react";
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis } from "recharts";
@@ -16,7 +16,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import type { LatestResume, VersionStack } from "@/pages/dashboard-page";
+import type { LatestResume, VersionStack } from "@/types/type";
 
 function deltaIcon(delta: number): LucideIcon {
    if (delta > 0) return TrendingUp;
@@ -56,7 +56,7 @@ function VersionPill({
          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
          className={cn(
             "min-w-30 flex-1 rounded-2xl border p-4 transition-shadow",
-            isLatest ? "shadow-card border-accefrom-accent/30 bg-accent-soft" : "bg-surface-2",
+            isLatest ? "shadow-card bg-accent-soft" : "bg-surface-2",
          )}
       >
          <div className="mb-3 flex items-center justify-between">
@@ -64,8 +64,8 @@ function VersionPill({
                className={cn(
                   "flex h-7 w-7 items-center justify-center rounded-xl",
                   isUpload
-                     ? "text-forground-muted bg-surface dark:bg-forground-muted dark:text-surface"
-                     : "bg-accent from-accent dark:bg-accent-soft dark:text-accent-strong text-white",
+                     ? "bg-accent-soft text-accent-strong dark:text-forground dark:bg-accent-strong"
+                     : "bg-accent from-accent dark:text-forground dark:bg-accent-strong text-white",
                )}
             >
                <Icon size={13} />
@@ -234,11 +234,14 @@ export default function VersionStack({
    const nav = useNavigate();
    if (!versions?.length) return null;
 
-   const visible = versions.slice(-3);
-   const latest = visible[visible.length - 1];
-   const first = visible[0];
-   const totalDelta = (latest?.score || 0) - (first?.score || 0);
-   const TotalDeltaIcon = deltaIcon(totalDelta);
+   const visible = useMemo(() => versions.slice(-3), [versions]);
+
+   const { latest, first, totalDelta, TotalDeltaIcon } = useMemo(() => {
+      const latest = visible.at(-1);
+      const first = visible.at(0);
+      const totalDelta = (latest?.score ?? 0) - (first?.score ?? 0);
+      return { latest, first, totalDelta, TotalDeltaIcon: deltaIcon(totalDelta) };
+   }, [visible]);
 
    return (
       <Card
@@ -266,7 +269,7 @@ export default function VersionStack({
                {visible.map((v, i) => {
                   const prev = visible[i - 1];
                   const delta = prev ? v.score - prev.score : 0;
-                  const isLatest = v.id === latest.id;
+                  const isLatest = v.id === latest?.id;
                   return (
                      <Fragment key={v.id}>
                         {i > 0 && (
@@ -292,17 +295,17 @@ export default function VersionStack({
                      Latest
                   </div>
                   <div className="font-display mt-1 truncate text-lg font-semibold tracking-tight">
-                     {title || latest.title || latest.label}
+                     {title || latest?.title || latest?.label}
                   </div>
                   <div className="text-forground-muted mt-0.5 text-xs">
-                     {latest.label} · {visible.length} version
+                     {latest?.label} · {visible.length} version
                      {visible.length > 1 ? "s" : ""}
                   </div>
                </div>
 
                <div className="space-y-2">
                   <div className="text-forground-muted text-[10px] font-semibold tracking-wide uppercase">
-                     Since {first.label}
+                     Since {first?.label}
                   </div>
                   <div
                      className={cn(
@@ -325,7 +328,7 @@ export default function VersionStack({
                   variant="accent"
                   size="sm"
                   disabled={!_id}
-                  onClick={() => _id && nav(`/resumes/${_id}`)}
+                  onClick={() => _id && nav(`/resume/${_id}`)}
                   className="w-full"
                >
                   Open Resume <ArrowUpRight size={13} />
@@ -336,7 +339,7 @@ export default function VersionStack({
          {/* Trajectory + Tier progress (fills the bottom with useful context) */}
          <div className="mt-6 flex-1 space-y-5 border-t pt-5">
             <TrajectoryChart versions={visible} />
-            <TierBar score={latest.score} />
+            <TierBar score={latest?.score!} />
          </div>
       </Card>
    );

@@ -69,7 +69,12 @@ export default function AtsGauge({ score = 0, delta = 0 }) {
                   How well your resume parses for ATS
                </CardDescription>
             </div>
-            <Badge tone={status.tone}>{status.label}</Badge>
+            <Badge
+               tone={status.tone}
+               className="px-1.5 text-[9px] sm:px-2.5 sm:text-xs"
+            >
+               {status.label}
+            </Badge>
          </CardHeader>
 
          <div className="flex flex-1 flex-col items-center justify-between gap-5 py-2 pb-0">

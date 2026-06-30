@@ -2,14 +2,17 @@ import { motion } from "motion/react";
 
 import { Outlet } from "react-router";
 
-import Sidebar from "@/components/ui/sidebar";
+import { MobileSidebar, Sidebar, SidebarProvider } from "@/components/ui/sidebar";
 import TopBar from "@/components/ui/topbar";
 import { Suspense } from "react";
+import ScrollToTop from "@/components/ui/scroll-to-top";
+import { CommandPalette, CommandPaletteProvider } from "@/components/ui/command-palette";
 
 function DashboardLayout() {
    return (
-      <>
+      <SidebarProvider>
          <Sidebar />
+         <MobileSidebar />
          <Suspense
             fallback={
                <div className="fixed inset-0 z-50">
@@ -22,19 +25,24 @@ function DashboardLayout() {
                </div>
             }
          >
-            <main className="mx-auto flex min-h-[calc(100svh-32px)] w-full max-w-400 flex-1 flex-col gap-5 p-4 lg:pl-32">
-               <TopBar />
-               <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -4 }}
-                  transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-               >
-                  <Outlet />
-               </motion.div>
-            </main>
+            <CommandPaletteProvider>
+               <main className="mx-auto flex min-h-[calc(100svh-32px)] w-full max-w-400 flex-1 flex-col gap-5 p-4 lg:pl-32">
+                  <TopBar />
+
+                  <motion.div
+                     initial={{ opacity: 0, y: 8 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     exit={{ opacity: 0, y: -4 }}
+                     transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                     <Outlet />
+                  </motion.div>
+               </main>
+               <ScrollToTop />
+               <CommandPalette />
+            </CommandPaletteProvider>
          </Suspense>
-      </>
+      </SidebarProvider>
    );
 }
 

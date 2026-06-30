@@ -2,6 +2,7 @@ import { SectionHeader } from "@/components/landing/feature-section";
 
 import { useState } from "react";
 import { Sparkles, Zap, Crown, CheckIcon, ArrowRightIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const PLANS = [
    {
@@ -83,21 +84,29 @@ function Pricing() {
    return (
       <>
          <div className="mt-12 text-center">
-            <div className="billing-toggle">
+            <div className="bg-surface-2 inline-flex rounded-full border p-1">
                <button
                   type="button"
                   onClick={() => setBilling("monthly")}
-                  className={billing === "monthly" ? "is-active" : ""}
+                  className={cn(
+                     "text-forground-muted focus-visible:outline-accent relative cursor-pointer rounded-full border-none bg-transparent px-4.5 py-2 text-[0.85rem] font-semibold transition-[background,color,box-shadow] duration-250 ease-[ease] focus-visible:outline-2 focus-visible:outline-offset-2",
+                     billing === "monthly" && "bg-accent-hero shadow-card text-white",
+                  )}
                >
                   Monthly
                </button>
                <button
                   type="button"
                   onClick={() => setBilling("yearly")}
-                  className={billing === "yearly" ? "is-active" : ""}
+                  className={cn(
+                     "text-forground-muted focus-visible:outline-accent relative cursor-pointer rounded-full border-none bg-transparent px-4.5 py-2 text-[0.85rem] font-semibold transition-[background,color,box-shadow] duration-250 ease-[ease] focus-visible:outline-2 focus-visible:outline-offset-2",
+                     billing === "yearly" && "bg-accent-hero shadow-card text-white",
+                  )}
                >
                   Yearly
-                  <span className="save-pill bg-accent-soft text-forground-muted">Save 20%</span>
+                  <span className="ml-1.75 rounded-full px-1.75 py-px text-[0.65rem] font-bold">
+                     Save 20%
+                  </span>
                </button>
             </div>
          </div>
@@ -235,11 +244,16 @@ function Pricing() {
                         {/* Call To Action Button */}
                         <button
                            type="button"
-                           className={`btn-cta mt-7 ${plan.featured ? "btn-cta--primary" : "btn-cta--secondary"}`}
+                           className={cn(
+                              "focus-visible:outline-accent ease mt-5 flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-[14px] border border-transparent px-5 py-[0.85rem] text-[0.95rem] font-semibold transition-[translate,box-shadow,background-color,border-color] duration-250 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.97]",
+                              plan.featured
+                                 ? "to-accent-hero-2 from-accent-hero bg-linear-to-br text-white shadow-[0_8px_20px_rgba(10,72,76,0.3)] hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(10,72,76,0.45)]"
+                                 : "text-accent-strong bg-surface hover:border-accent hover:bg-accent-soft",
+                           )}
                         >
                            {plan.cta}
 
-                           <ArrowRightIcon className="arrow h-4 w-4" />
+                           <ArrowRightIcon className="transition-transform duration-250 ease-[ease] group-hover:translate-x-0.75" />
                         </button>
 
                         <p

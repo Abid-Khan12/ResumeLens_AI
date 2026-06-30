@@ -75,7 +75,7 @@ export function TabsTrigger({ value, children, className }: TabsTriggerProps) {
             <motion.span
                layoutId="tab-active"
                className="bg-forground absolute inset-0 rounded-full"
-               transition={{ type: "spring", duration: 0.3, bounce: 0.2 }}
+               transition={{ type: "spring", duration: 0.3, bounce: 0.3 }}
             />
          )}
          <span className="relative z-10">{children}</span>

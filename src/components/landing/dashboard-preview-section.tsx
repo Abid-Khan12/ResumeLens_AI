@@ -133,7 +133,7 @@ function DashboardPreviewSection() {
                               }}
                               className="h-full rounded-full"
                               style={{
-                                 background: "linear-gradient(90deg, #8FB39C 0%, #B6CFC0 100%)",
+                                 background: "linear-gradient(90deg, #0a484c 0%, #0a9aa4 100%)",
                               }}
                            />
                         </div>
@@ -269,7 +269,7 @@ function KpiCard({
          className={cn(
             `rounded-2xl border p-5`,
             accent
-               ? "border-[rgba(143,179,156,0.3)] bg-linear-to-br from-[#2F4A3A] to-[#1A2B22]"
+               ? "border-[rgba(42,184,192,0.2)] bg-linear-to-br from-[#0f7278] to-[#0a484c]"
                : "border-white/[0.07] bg-white/3",
             className,
          )}
@@ -323,12 +323,12 @@ function AreaChart() {
             >
                <stop
                   offset="0%"
-                  stopColor="#8FB39C"
-                  stopOpacity="0.35"
+                  stopColor="#0a9aa4"
+                  stopOpacity="0.3"
                />
                <stop
                   offset="100%"
-                  stopColor="#8FB39C"
+                  stopColor="#0a9aa4"
                   stopOpacity="0"
                />
             </linearGradient>
@@ -344,7 +344,7 @@ function AreaChart() {
          <motion.path
             d={path}
             fill="none"
-            stroke="#B6CFC0"
+            stroke="#0a9aa4"
             strokeWidth="2.5"
             strokeLinecap="round"
             initial={{ pathLength: 0 }}
@@ -358,8 +358,8 @@ function AreaChart() {
                cx={i * stepX}
                cy={h - (p / 100) * h}
                r="3.5"
-               fill="#16181D"
-               stroke="#B6CFC0"
+               fill="#081618"
+               stroke="#0a9aa4"
                strokeWidth="2"
             />
          ))}

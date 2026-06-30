@@ -6,8 +6,8 @@ type ChipTone = "present" | "missing";
 function Chip({ children, tone }: { children: React.ReactNode; tone: ChipTone }) {
    if (tone === "present") {
       return (
-         <span className="bg-accent-strong text-accent-soft inline-flex h-7 items-center gap-1.5 rounded-full pr-3 pl-1.5 text-[12px] font-semibold transition-transform hover:-translate-y-px">
-            <span className="bg-accent-soft text-accent-strong flex h-4 w-4 items-center justify-center rounded-full">
+         <span className="bg-accent-strong text-accent-soft dark:text-forground dark:bg-accent-strong inline-flex h-7 items-center gap-1.5 rounded-full pr-3 pl-1.5 text-[12px] font-semibold transition-transform hover:-translate-y-px">
+            <span className="bg-accent-soft text-accent-strong dark:text-forground dark:bg-accent-strong flex h-4 w-4 items-center justify-center rounded-full">
                <Check
                   size={9}
                   strokeWidth={3.5}

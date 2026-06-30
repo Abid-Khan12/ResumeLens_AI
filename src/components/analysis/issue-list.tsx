@@ -44,9 +44,8 @@ function IssueItem({ issue }: { issue: { title: string; severity: string; fix: s
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                      >
-                        {/* <div className="text-forground-muted mt-2 text-xs">{issue.explanation}</div> */}
                         {issue.fix && (
-                           <div className="bg-accent-soft text-accent-strong rounded-xl px-3 py-2 text-xs">
+                           <div className="bg-accent-soft text-accent-strong dark:text-forground dark:bg-accent-strong rounded-xl px-3 py-2 text-xs">
                               <strong className="font-semibold">Fix:</strong> {issue.fix}
                            </div>
                         )}

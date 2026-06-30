@@ -20,7 +20,7 @@ export function Avatar({ name, src, size = 40, className }: AvatarProps): React.
    return (
       <div
          className={cn(
-            "text-accent-strong ring-surface bg-accent-soft relative inline-flex items-center justify-center overflow-hidden rounded-full font-semibold ring-2",
+            "text-accent-strong ring-surface bg-accent-soft dark:text-forground dark:bg-accent-strong relative inline-flex items-center justify-center overflow-hidden rounded-full font-semibold ring-2",
             className,
          )}
          style={{ width: size, height: size, fontSize: size * 0.36 }}

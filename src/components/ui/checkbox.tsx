@@ -27,7 +27,7 @@ export function Checkbox({
             className={cn(
                "flex h-4 w-4 items-center justify-center rounded-md border transition-colors",
                checked
-                  ? "bg-accent border-transparent text-white"
+                  ? "bg-accent dark:bg-accent border-transparent text-white"
                   : "border-border bg-surface-2 text-transparent",
             )}
          >

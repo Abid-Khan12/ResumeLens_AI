@@ -15,16 +15,3 @@ export function relativeTime(date: Date) {
    return d.toLocaleDateString();
 }
 
-export const minutesAgo = (minutes: number): Date => {
-   const date = new Date();
-   date.setMinutes(date.getMinutes() - minutes);
-   return date;
-};
-
-export const hoursAgo = (h: number): Date => minutesAgo(h * 60);
-
-export const daysAgo = (days: number): Date => {
-   const date = new Date();
-   date.setDate(date.getDate() - days);
-   return date;
-};

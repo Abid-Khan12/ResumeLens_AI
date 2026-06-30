@@ -66,11 +66,8 @@ function RegisterFrom() {
                icon={LockIcon}
             />
             <button
-               className="group mt-3 inline-flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-2xl py-2.5 font-semibold text-white duration-300"
+               className="group mt-3 inline-flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-2xl bg-teal-500 py-2.5 font-semibold text-white duration-300"
                type="submit"
-               style={{
-                  background: "linear-gradient(135deg, #5B7C6A 0%, #3A5C49 50%, #2F4A3A 100%)",
-               }}
             >
                Create Account{" "}
                <ArrowRightIcon

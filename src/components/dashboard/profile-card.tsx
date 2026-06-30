@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import type { ProfileStats, User } from "@/pages/dashboard-page";
+import type { ProfileStats, User } from "@/types/type";
 
 function memberSince(date: Date) {
    if (!date) return null;

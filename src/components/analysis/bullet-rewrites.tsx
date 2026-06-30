@@ -202,7 +202,7 @@ export default function BulletRewrites({ rewrites, onApply, isApplying }: Bullet
                      key={id}
                      className={cn(
                         "group relative rounded-2xl border p-5 transition-colors",
-                        isSelected && "shadow-card border-accent/45 bg-surface-2",
+                        isSelected && "shadow-card border-accent/50 bg-surface-2",
                      )}
                   >
                      {/* Header row: number + section + selection state */}
@@ -215,7 +215,7 @@ export default function BulletRewrites({ rewrites, onApply, isApplying }: Bullet
                               />
                            </div>
                            {r.section && (
-                              <span className="bg-accent-soft text-accent-strong inline-flex h-6 items-center rounded-full px-2 text-xs font-semibold capitalize">
+                              <span className="bg-accent-soft text-accent-strong dark:text-forground dark:bg-accent-strong inline-flex h-6 items-center rounded-full px-2 text-xs font-semibold capitalize">
                                  {r.section}
                               </span>
                            )}
@@ -284,7 +284,7 @@ export default function BulletRewrites({ rewrites, onApply, isApplying }: Bullet
                      {/* Rationale */}
                      {r.rationale && (
                         <div className="border-border bg-surface-2/60 mt-4 flex items-center gap-2 rounded-xl border p-3">
-                           <span className="bg-accent-soft text-accent-strong mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center self-start rounded-md">
+                           <span className="bg-accent-soft text-accent-strong dark:text-forground dark:bg-accent-strong mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center self-start rounded-md">
                               <Info
                                  size={10}
                                  strokeWidth={2.5}

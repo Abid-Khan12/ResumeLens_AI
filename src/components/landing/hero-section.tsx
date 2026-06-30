@@ -62,7 +62,7 @@ function HeroSection() {
                      <span
                         style={{
                            backgroundImage:
-                              "linear-gradient(120deg, #B6CFC0 0%, #8FB39C 55%, #5B7C6A 100%)",
+                              "linear-gradient(120deg, #a8e2e6 0%, #2ab8c0 55%, #0a484c 100%)",
                            WebkitBackgroundClip: "text",
                            backgroundClip: "text",
                            WebkitTextFillColor: "transparent",
@@ -89,10 +89,10 @@ function HeroSection() {
                   >
                      <Link
                         to={"/register"}
-                        className="group inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-5 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(143,179,156,0.5)] transition-shadow hover:shadow-[0_14px_36px_-8px_rgba(143,179,156,0.7)] active:scale-[0.98]"
+                        className="group inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-5 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(42,184,192,0.45)] transition-shadow hover:shadow-[0_14px_36px_-8px_rgba(42,184,192,0.65)] active:scale-[0.98]"
                         style={{
                            background:
-                              "linear-gradient(135deg, #8FB39C 0%, #5B7C6A 55%, #2F4A3A 100%)",
+                              "linear-gradient(135deg, #2ab8c0 0%, #0f7278 55%, #0a484c 100%)",
                         }}
                      >
                         Upload your resume

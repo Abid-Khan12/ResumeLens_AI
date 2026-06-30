@@ -63,7 +63,7 @@ function LoginForm() {
                className="group mt-3 inline-flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-2xl py-2.5 font-semibold text-white duration-300"
                type="submit"
                style={{
-                  background: "linear-gradient(135deg, #5B7C6A 0%, #3A5C49 50%, #2F4A3A 100%)",
+                  background: "linear-gradient(135deg, #0a9aa4 0%, #0f7278 50%, #0a484c 100%)",
                }}
             >
                Sign In{" "}

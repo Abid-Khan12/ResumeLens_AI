@@ -94,7 +94,9 @@ function StatCard({
                   <span
                      className={cn(
                         "flex size-8 shrink-0 items-center justify-center rounded-full",
-                        accent ? "bg-white/15 text-white" : "bg-accent-soft text-accent-strong",
+                        accent
+                           ? "bg-white/15 text-white"
+                           : "bg-accent-soft text-accent-strong dark:text-forground dark:bg-accent-strong",
                      )}
                   >
                      <Icon

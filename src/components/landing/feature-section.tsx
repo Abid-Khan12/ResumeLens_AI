@@ -88,7 +88,7 @@ function FeatureSection() {
                   <span
                      style={{
                         backgroundImage:
-                           "linear-gradient(120deg, #5B7C6A 0%, #2F4A3A 60%, #5B7C6A 100%)",
+                           "linear-gradient(120deg, #0f7278 0%, #0a484c 60%, #0f7278 100%)",
                         WebkitBackgroundClip: "text",
                         backgroundClip: "text",
                         WebkitTextFillColor: "transparent",
@@ -111,7 +111,7 @@ function FeatureSection() {
                   transition={{ duration: 0.5, delay: i * 0.05 }}
                   key={item.title}
                   className={cn(
-                     "group shadow-card hover:shadow-card-hover rounded-card relative w-full space-y-5 overflow-hidden border bg-linear-to-b from-[#FFFFFF] from-0% to-[#FBFBF7] to-100% p-5 transition-shadow duration-300 sm:p-6 dark:bg-none",
+                     "group shadow-card rounded-card relative w-full space-y-5 overflow-hidden border bg-linear-to-b from-[#FFFFFF] from-0% to-[#FBFBF7] to-100% p-5 transition-shadow duration-300 sm:p-6 dark:bg-none",
                      item.span,
                   )}
                >
@@ -139,7 +139,7 @@ function FeatureSection() {
                   {/* Corner hover effect */}
 
                   <div className="flex items-start gap-3">
-                     <div className="dark:bg-accent-soft dark:text-accent-strong flex size-10 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-[#EEF5EF] to-[#D9E7DD] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),0_1px_2px_rgba(47,74,58,0.06)] transition-transform duration-200 group-hover:scale-105 dark:bg-none dark:shadow-none">
+                     <div className="dark:bg-accent-soft bg-accent-soft text-accent-strong flex size-10 shrink-0 items-center justify-center rounded-2xl transition-transform duration-200 group-hover:scale-105 dark:shadow-none">
                         <Icon
                            size={17}
                            strokeWidth={2.5}
@@ -176,7 +176,7 @@ export const SectionHeader = ({
    return (
       <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-4 text-center">
          {/* Section Chip */}
-         <span className="bg-accent-soft text-accent-strong rounded-full border px-3 py-1 text-[11px] font-semibold tracking-[0.12em] uppercase">
+         <span className="bg-accent-soft text-accent-strong dark:text-forground rounded-full border px-3 py-1 text-[11px] font-semibold tracking-[0.12em] uppercase">
             {eyebrow}
          </span>
          {/* Section Chip */}
@@ -276,7 +276,7 @@ function KeywordsPreview() {
             {matched.map((k) => (
                <span
                   key={k}
-                  className="bg-accent-soft text-accent-strong rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                  className="bg-accent-soft rounded-full px-2 py-0.5 text-[10px] font-semibold"
                >
                   ✓ {k}
                </span>

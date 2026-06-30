@@ -37,59 +37,59 @@
 }
 
 :root {
-   --background: #f4f4f0;
+   --background: #eef4f5;
    --surface: #ffffff;
-   --surface-2: #fafaf7;
+   --surface-2: #f4fafb;
 
-   --forground: #0f1115;
-   --forground-muted: #6b7280;
+   --forground: #051214;
+   --forground-muted: #4a7880;
 
-   --accent: #5b7c6a;
-   --accent-strong: #2f4a3a;
-   --accent-soft: #e6efe8;
+   --accent: #0a9aa4;
+   --accent-strong: #076e76;
+   --accent-soft: #c2eef1;
 
-   --accent-hero: #2f4a3a;
-   --accent-hero-2: #436354;
+   --accent-hero: #076e76;
+   --accent-hero-2: #0a8890;
 
-   --border: #0f11150f;
+   --border: rgba(10, 154, 164, 0.12);
 
-   --success: #4a7a5d;
-   --warning: #c28a3a;
-   --danger: #b5564e;
+   --success: #22664a;
+   --warning: #906814;
+   --danger: #b83232;
 
-   --shadow-card: 0 1px 3px rgba(15, 17, 21, 0.04), 0 1px 2px rgba(15, 17, 21, 0.03);
-   --shadow-hover: 0 6px 20px rgba(15, 17, 21, 0.06);
+   --shadow-card: 0 1px 3px rgba(5, 18, 20, 0.05), 0 1px 2px rgba(5, 18, 20, 0.04);
+   --shadow-hover: 0 6px 20px rgba(5, 18, 20, 0.09);
 
-   --scrollbar-thumb: rgba(0, 0, 0, 0.08);
-   --scrollbar-thumb-hover: rgba(0, 0, 0, 0.14);
+   --scrollbar-thumb: rgba(5, 18, 20, 0.22);
+   --scrollbar-thumb-hover: rgba(5, 18, 20, 0.38);
 }
 
-.dark {
-   --background: #0f1115;
-   --surface: #16181d;
-   --surface-2: #1b1e24;
+/* .dark {
+   --background: #040e10;
+   --surface: #081618;
+   --surface-2: #0e1e20;
 
-   --forground: #f2f2ee;
-   --forground-muted: #9aa0a6;
+   --forground: #e4f2f4;
+   --forground-muted: #5aa0a8;
 
-   --accent: #5b7c6a;
-   --accent-strong: #2f4a3a;
-   --accent-soft: #e6efe8;
+   --accent: #2ab8c0;
+   --accent-strong: #0a484c;
+   --accent-soft: #082428;
 
-   --accent-hero: #1e3024;
-   --accent-hero-2: #2a4234;
+   --accent-hero: #082428;
+   --accent-hero-2: #0e3438;
 
-   --border: #ffffff0f;
+   --border: rgba(42, 184, 192, 0.12);
 
-   --success: #8fb39c;
-   --warning: #d4a86a;
-   --danger: #d4847c;
+   --success: #5aaa7a;
+   --warning: #d0a460;
+   --danger: #e05852;
 
-   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
-   --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.35);
+   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.25);
+   --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.4);
 
-   --scrollbar-thumb: rgba(255, 255, 255, 0.08);
-   --scrollbar-thumb-hover: rgba(255, 255, 255, 0.14);
+   --scrollbar-thumb: rgba(180, 230, 235, 0.22);
+   --scrollbar-thumb-hover: rgba(180, 230, 235, 0.38);
 }
 
 @layer base {
@@ -118,140 +118,6 @@
 }
 ::-webkit-scrollbar-thumb:hover {
    background: var(--scrollbar-thumb-hover);
-}
-
-.billing-toggle {
-   display: inline-flex;
-
-   padding: 4px;
-
-   border-radius: 999px;
-
-   background: var(--surface-2);
-
-   border: 1px solid var(--border);
-}
-
-.billing-toggle button {
-   position: relative;
-
-   padding: 8px 18px;
-
-   border-radius: 999px;
-
-   font-size: 0.85rem;
-
-   font-weight: 600;
-
-   color: var(--forground-muted);
-
-   background: transparent;
-
-   border: none;
-
-   cursor: pointer;
-
-   transition:
-      background 0.25s ease,
-      color 0.25s ease,
-      box-shadow 0.25s ease;
-}
-
-.billing-toggle button.is-active {
-   background: var(--accent-hero);
-
-   color: #fff;
-
-   box-shadow: var(--shadow-card);
-}
-
-.save-pill {
-   margin-left: 7px;
-
-   padding: 1px 7px;
-
-   border-radius: 999px;
-
-   font-size: 0.65rem;
-
-   font-weight: 700;
-}
-
-.btn-cta {
-   display: flex;
-
-   align-items: center;
-
-   justify-content: center;
-
-   gap: 6px;
-
-   width: 100%;
-
-   padding: 0.85rem 1.25rem;
-
-   border-radius: 14px;
-
-   font-weight: 600;
-
-   font-size: 0.95rem;
-
-   border: 1px solid transparent;
-
-   cursor: pointer;
-
-   transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease,
-      background 0.25s ease,
-      border-color 0.25s ease;
-}
-
-.btn-cta:active {
-   transform: scale(0.97);
-}
-
-.btn-cta--primary {
-   background: linear-gradient(135deg, var(--accent-hero), var(--accent-hero-2));
-
-   color: #fff;
-
-   box-shadow: 0 8px 20px rgba(47, 74, 58, 0.25);
-}
-
-.btn-cta--primary:hover {
-   box-shadow: 0 10px 26px rgba(47, 74, 58, 0.35);
-
-   transform: translateY(-2px);
-}
-
-.btn-cta--secondary {
-   background: var(--surface);
-
-   color: var(--accent-strong);
-
-   border-color: var(--border);
-}
-
-.btn-cta--secondary:hover {
-   background: var(--accent-soft);
-
-   border-color: var(--accent);
-}
-
-.btn-cta .arrow {
-   transition: transform 0.25s ease;
-}
-
-.btn-cta:hover .arrow {
-   transform: translateX(3px);
-}
-
-.btn-cta:focus-visible,
-.billing-toggle button:focus-visible {
-   outline: 2px solid var(--accent);
-
-   outline-offset: 2px;
 }
 
 @layer utilities {

@@ -13,29 +13,9 @@ function BrandPanel({ headline, subhead }: { headline: ReactNode; subhead: strin
             className="absolute inset-0"
             style={{
                background:
-                  "linear-gradient(140deg, #18271F 0%, #2F4A3A 38%, #1A2B22 72%, #0E1812 100%)",
+                  "linear-gradient(140deg, #0e2e32 0%, #0a484c 38%, #0c2a2e 72%, #081e22 100%)",
             }}
          />
-         {/* glow */}
-         {/* <motion.div
-            className="pointer-events-none absolute top-0 bottom-0 w-[60%] opacity-40 mix-blend-screen select-none"
-            style={{
-               // Sharp emerald-mint core leaking out to transparent edges
-               background:
-                  "linear-gradient(90deg, transparent 0%, rgba(16,185,129,0.08) 50%, transparent 100%)",
-               willChange: "transform",
-            }}
-            animate={{
-               // Moves completely across the visual layout context box
-               x: ["-100%", "200%"],
-            }}
-            transition={{
-               duration: 3, // Time taken to travel from left to right
-               repeat: Infinity, // Continuous loops
-               repeatDelay: 1, // The rest/delay time in seconds before running the loop again
-               ease: [0.25, 1, 0.5, 1], // Custom quad ease-out variant for variable momentum
-            }}
-         /> */}
 
          {/* Content */}
          <div className="relative z-10 flex h-160 flex-col gap-10 pt-10 xl:h-180 xl:justify-between xl:pt-16">
