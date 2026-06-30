@@ -1,4 +1,3 @@
-import type { Activity } from "@/pages/dashboard-page";
 import type { Tone } from "@/components/dashboard/ats-gauge-card";
 
 import { Upload, Sparkles, PenLine, CheckCircle2, FileDown, type LucideIcon } from "lucide-react";
@@ -7,6 +6,7 @@ import { relativeTime } from "@/lib/utils";
 
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import type { Activity } from "@/types/type";
 
 const ICONS: {
    upload: LucideIcon;
