@@ -1,7 +1,8 @@
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { motion } from "motion/react";
 
 import BrandPanel from "@/components/auth/brand-panel";
+import { useTheme } from "@/providers/theme-provider";
 
 function AuthShell({
    children,
@@ -12,6 +13,10 @@ function AuthShell({
    headline: ReactNode;
    subhead: string;
 }) {
+   const { setTheme } = useTheme();
+   useEffect(() => {
+      setTheme("light");
+   }, [setTheme]);
    return (
       <div className="mx-auto flex min-h-svh w-full max-w-325 items-center justify-center gap-0 px-3 py-4 sm:px-6 lg:gap-4">
          <div className="flex flex-1 items-center justify-center px-4 sm:px-8 xl:py-10">

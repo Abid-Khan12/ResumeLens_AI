@@ -1,40 +1,47 @@
 import { GaugeIcon, KeyRoundIcon, LayersIcon, LightbulbIcon } from "lucide-react";
-import { daysAgo, minutesAgo } from "./helper";
+import { daysAgo, hoursAgo, minutesAgo } from "./helper";
 
 export const statCardData = {
    atsScore: {
-      value: 86,
-      delta: 18,
-      spark: [{ v: 62 }, { v: 65 }, { v: 70 }, { v: 78 }, { v: 82 }, { v: 84 }, { v: 86 }],
+      value: 91,
+      delta: 9,
+      spark: [{ v: 68 }, { v: 72 }, { v: 76 }, { v: 82 }, { v: 86 }, { v: 89 }, { v: 91 }],
       icon: GaugeIcon,
    },
+
    versions: {
-      value: 6,
-      spark: [{ v: 1 }, { v: 2 }, { v: 3 }, { v: 4 }, { v: 5 }, { v: 5 }, { v: 6 }],
+      value: 3,
+      spark: [{ v: 1 }, { v: 1 }, { v: 2 }, { v: 2 }, { v: 3 }, { v: 3 }, { v: 3 }],
       icon: LayersIcon,
    },
+
    issuesIdentified: {
-      value: 14,
-      delta: -32,
-      spark: [{ v: 20 }, { v: 18 }, { v: 16 }, { v: 14 }, { v: 12 }, { v: 14 }, { v: 14 }],
+      value: 5,
+      delta: -15,
+      spark: [{ v: 20 }, { v: 17 }, { v: 13 }, { v: 10 }, { v: 8 }, { v: 6 }, { v: 5 }],
       icon: LightbulbIcon,
    },
+
    keywordsMatched: {
-      value: 24,
-      total: 26,
-      delta: 12,
-      spark: [{ v: 12 }, { v: 14 }, { v: 17 }, { v: 19 }, { v: 21 }, { v: 23 }, { v: 24 }],
+      value: 29,
+      total: 30,
+      delta: 11,
+      spark: [{ v: 14 }, { v: 17 }, { v: 20 }, { v: 23 }, { v: 26 }, { v: 28 }, { v: 29 }],
       icon: KeyRoundIcon,
    },
 };
 
 export const scoreSeries = [
-   { label: "V1", score: 62 },
-   { label: "V2", score: 78 },
-   { label: "V3", score: 86 },
+   { label: "V1", score: 68 },
+   { label: "V2", score: 82 },
+   { label: "V3", score: 91 },
 ];
 
-export const totals = { resumes: 3, rewrites: 9, analyses: 12 };
+export const totals = {
+   resumes: 8,
+   rewrites: 31,
+   analyses: 47,
+};
 
 export const profileStats = [
    { label: "Resumes", value: totals.resumes },
@@ -43,55 +50,88 @@ export const profileStats = [
 ];
 
 export const versionStack = [
-   { id: "v_1_1", label: "V1", title: "Upload", score: 62 },
-   { id: "v_1_2", label: "V2", title: "Rewrite pass", score: 78 },
-   { id: "v_1_3", label: "V3", title: "Rewrite pass", score: 86 },
+   {
+      id: "v_1_1",
+      label: "V1",
+      title: "Original Upload",
+      score: 68,
+   },
+   {
+      id: "v_1_2",
+      label: "V2",
+      title: "AI Rewrite",
+      score: 82,
+   },
+   {
+      id: "v_1_3",
+      label: "V3",
+      title: "Final Optimized",
+      score: 91,
+   },
 ];
 
 export const activity = [
    {
       id: "a1",
       type: "analyze",
-      title: "Analysis complete on V3",
-      subtitle: "ATS score 86 / 100",
-      label: "+8 pts",
-      at: minutesAgo(4),
+      title: "Analysis completed",
+      subtitle: "ATS score improved to 91 / 100",
+      label: "+9 pts",
+      at: minutesAgo(6),
       resumeId: "resume_1",
    },
    {
       id: "a2",
       type: "rewrite",
-      title: "4 bullets rewritten",
-      subtitle: "Applied to Experience section",
+      title: "6 experience bullets optimized",
+      subtitle: "Action verbs and keywords improved",
       label: "V3 created",
-      at: minutesAgo(28),
+      at: minutesAgo(22),
       resumeId: "resume_1",
    },
    {
       id: "a3",
       type: "analyze",
-      title: "Analysis complete on V2",
-      subtitle: "ATS score 78 / 100",
-      label: "+16 pts",
-      at: daysAgo(8),
+      title: "Analysis completed",
+      subtitle: "ATS score 82 / 100",
+      label: "+14 pts",
+      at: hoursAgo(3),
       resumeId: "resume_1",
    },
    {
       id: "a4",
       type: "upload",
-      title: "Senior_Frontend_Stripe.pdf uploaded",
-      subtitle: "Parsed 6 sections, 18 bullets",
+      title: "Frontend_Developer_Resume.pdf uploaded",
+      subtitle: "Parsed 7 sections and 24 bullet points",
       label: "V1",
-      at: daysAgo(20),
+      at: daysAgo(2),
       resumeId: "resume_1",
    },
    {
       id: "a5",
       type: "rewrite",
-      title: "3 bullets rewritten",
-      subtitle: "Vercel resume",
+      title: "Skills section optimized",
+      subtitle: "Added ATS keywords for React and TypeScript",
       label: "V2 created",
-      at: daysAgo(3),
+      at: daysAgo(5),
+      resumeId: "resume_2",
+   },
+   {
+      id: "a6",
+      type: "analyze",
+      title: "Analysis completed",
+      subtitle: "ATS score 88 / 100",
+      label: "+11 pts",
+      at: daysAgo(6),
+      resumeId: "resume_2",
+   },
+   {
+      id: "a7",
+      type: "upload",
+      title: "Backend_Engineer_Resume.pdf uploaded",
+      subtitle: "Parsed 6 sections and 19 bullet points",
+      label: "V1",
+      at: daysAgo(9),
       resumeId: "resume_2",
    },
 ];
@@ -103,4 +143,7 @@ export const user = {
    createdAt: daysAgo(45),
 };
 
-export const latestResume = { _id: "resume_1", title: "Senior Frontend Engineer — Stripe" };
+export const latestResume = {
+   _id: "resume_1",
+   title: "Frontend Developer Resume",
+};

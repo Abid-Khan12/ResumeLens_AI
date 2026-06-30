@@ -91,7 +91,7 @@ function VersionPill({
                   delta > 0 && "bg-accent-soft text-success",
                   delta < 0 && "text-danger bg-[#F8E3E0]",
                   delta === 0 && "text-forground-muted bg-surface",
-                  isLatest && delta > 0 && "text-success bg-white",
+                  isLatest && delta > 0 && "text-accent-soft bg-accent",
                )}
             >
                <DeltaIcon

@@ -261,13 +261,7 @@ function DownloadVisual() {
                   <div className="bg-forground-muted/25 h-0.5 w-2/3 rounded" />
                   <div className="bg-accent-soft mt-auto h-1.25 w-full rounded-[1px]" />
                </div>
-               <div
-                  className="absolute -right-1.5 -bottom-1.5 flex h-5 items-center rounded-md px-1.5 text-[8px] font-bold text-white"
-                  style={{
-                     background:
-                        "linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%)",
-                  }}
-               >
+               <div className="absolute -right-1.5 -bottom-1.5 flex h-5 items-center rounded-md bg-teal-600 px-1.5 text-[8px] font-bold text-white">
                   PDF
                </div>
             </div>
@@ -277,7 +271,7 @@ function DownloadVisual() {
                </div>
                <div className="text-forground-muted mt-0.5 text-[10px]">ATS-ready · 1 page</div>
             </div>
-            <button className="bg-forground text-background flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-transform hover:-translate-y-0.5">
+            <button className="bg-accent-soft text-accent-strong flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-transform hover:-translate-y-0.5">
                <FileDownIcon size={13} />
             </button>
          </div>
